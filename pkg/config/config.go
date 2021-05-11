@@ -62,3 +62,18 @@ func (c *Config) GetAPIPort() string {
 func (c *Config) GetMigration() string {
 	return c.migrate
 }
+
+func (c *Config) GetMigrationDBConnStr() string {
+	return c.getMigrationDBConnStr(c.dbHost, c.dbName)
+}
+
+func (c *Config) getMigrationDBConnStr(dbHost, dbName string) string {
+	return fmt.Sprintf(
+		"postgres://%s@%s:%s/%s?sslmode=disable&password=%s",
+		c.dbUser,
+		dbHost,
+		c.dbPort,
+		dbName,
+		c.dbPass,
+	)
+}

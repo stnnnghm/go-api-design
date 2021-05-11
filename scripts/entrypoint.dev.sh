@@ -3,7 +3,7 @@ set -e
 
 go run cmd/dbmigrate/main.go
 
-go run cmd/dbmigrate/main.go -dbname=goapidesigntest -password=password
+go run cmd/dbmigrate/main.go -dbname=goapidesigntest
 
 GO111MODULE=off go get github.com/githubnemo/CompileDaemon
 
