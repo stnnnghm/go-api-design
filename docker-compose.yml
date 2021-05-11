@@ -15,7 +15,7 @@ services:
     env_file:
       - .env
     ports:
-      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
+      - "${POSTGRES_PORT1}:${POSTGRES_PORT2}"
     volumes:
       - goapidesignvolume:/var/lib/postgresql/data
       - ./db/scripts:/docker-entrypoint-initdb.d/
